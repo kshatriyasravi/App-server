@@ -15,7 +15,7 @@ pipeline {
         stage ('scm ') {
           steps {
             
-                git 'https://github.com/Ekryd/sortpom.git'
+                git 'https://github.com/kshatriyasravi/helloworld.git'
                 sh 'pwd'
                 sh 'ls -la'
                }
