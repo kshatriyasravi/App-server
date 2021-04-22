@@ -12,10 +12,17 @@ pipeline {
                 '''
             }
         }
-
+        stage ('scm ') {
+          steps {
+            sh '''
+                git 'https://github.com/kshatriyasravi/app-server.git'
+               '''    
+               }
+            }   
         stage ('Build') {
             steps {
                 sh 'mvn -version' 
+                sh 'mvn clean package'
             }
             
         }
