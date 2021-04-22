@@ -1,9 +1,8 @@
-pipeline
-{
+pipeline {
     agent any
-    tools {
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
+    tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
     }
     stages {
         stage ('Initialize') {
@@ -11,23 +10,13 @@ pipeline
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
-                '''
+                ''' 
             }
         }
-        
-        stage("data fetching")
-        {
-            steps
-            {
-                git 'https://github.com/kshatriyasravi/app-server.git'
-            }
-        }
-        
-        stage("building jar")
-        {
-            steps
-            {
-                sh "mvn clean package"
+
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
             }
         }
     }
