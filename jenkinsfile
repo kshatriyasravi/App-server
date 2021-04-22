@@ -18,14 +18,13 @@ pipeline {
                 git 'https://github.com/Ekryd/sortpom.git'
                 sh 'pwd'
                 sh 'ls -la'
-                
-                 
                }
             }   
         stage ('Build') {
             steps {
                 sh 'mvn -version' 
                 sh 'pwd'
+                sh 'mvn clean install'
                 
                
             }
