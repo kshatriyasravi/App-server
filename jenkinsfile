@@ -15,7 +15,9 @@ pipeline {
         stage ('scm ') {
           steps {
             
-                git 'https://github.com/kshatriyasravi/Maven-pom.git'
+                git 'https://github.com/Ekryd/sortpom.git'
+                sh 'pwd'
+                sh 'ls -la'
                 
                  
                }
@@ -23,7 +25,8 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'mvn -version' 
-                sh 'mvn clean'
+                sh 'pwd'
+                
                
             }
             
