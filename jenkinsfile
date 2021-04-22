@@ -1,0 +1,15 @@
+pipeline
+{
+    agent any
+    
+    stages
+    {
+        stage("data fetching")
+        {
+            steps
+            {
+                git 'https://github.com/kshatriyasravi/app-server.git'
+            }
+        }
+    }
+}
