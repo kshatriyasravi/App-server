@@ -1,6 +1,10 @@
 pipeline
 {
     agent any
+    tools
+    {
+        maven 'Maveen3.6.3'
+    }
     
     stages
     {
@@ -9,6 +13,13 @@ pipeline
             steps
             {
                 git 'https://github.com/kshatriyasravi/app-server.git'
+            }
+        }
+        stage("building jar")
+        {
+            steps
+            {
+                sh "mvn clean package"
             }
         }
     }
