@@ -16,13 +16,15 @@ pipeline {
           steps {
             
                 git 'https://github.com/kshatriyasravi/Maven-pom.git'
+                sh 'mvn -version' 
+                sh 'mvn clean '
                  
                }
             }   
         stage ('Build') {
             steps {
                 sh 'mvn -version' 
-                sh 'mvn clean '
+               
             }
             
         }
